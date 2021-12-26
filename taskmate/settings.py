@@ -1,5 +1,7 @@
+import django_heroku
 import os
 import environ
+
 
 from pathlib import Path
 
@@ -122,7 +124,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CUSTOMIZING:
+# ------------- CUSTOMIZING ---------------
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'todolist'
 LOGIN_URL = 'login'
+django_heroku.settings(locals())
+# ------------ END CUSTOMIZING -------------
