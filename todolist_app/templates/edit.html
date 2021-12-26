@@ -1,0 +1,27 @@
+{% extends 'app_base.html' %} 
+
+{% block title %}
+    <title>Task Mate - Edit Task</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        </br>
+        <h1>Update Task</h1>
+        </br>
+
+        {% if task_obj.owner == request.user %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                <div class="input-group-text">Task Name</div>
+                <input type="text" class="form-control" name="task" id="task" placeholder="{{ task_obj.task }}" value="{{ task_obj.task }}">
+                <input type="hidden" class="form-control" name="done" id="done" placeholder="{{ task_obj.done }}" value="{{ task_obj.done }}">
+                <button type="submit" class="btn btn-primary">Update Task</button>
+                </div>
+            </form>
+        {% else %}
+            <p>Access restricted, you are NOT allowed!</p>
+        {% endif %}
+    </div>
+{% endblock content %}

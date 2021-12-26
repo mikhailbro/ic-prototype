@@ -1,0 +1,32 @@
+{% extends 'app_base.html' %} 
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Task Mate - Register new user</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        </br>
+        <h1>Register New User Account</h1>
+        </br>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-dismissible fade show alert-success" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}    
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <!-- 
+                {{ register_form.as_p }}
+            -->
+            {{ register_form|crispy }}
+
+            <button type="submit" class="btn btn-primary btn-lg mt-5">Register Account</button>
+        </form>
+    </div>
+{% endblock content %}

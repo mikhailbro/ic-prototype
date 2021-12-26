@@ -1,0 +1,40 @@
+{% extends 'app_base.html' %} 
+{% load static %}
+
+{% block title %}
+    <title>{{ title_text }}</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        </br>
+        <h1 class="text-center shadow">{{ index_text }}</h1>
+
+        <div class="row mt-5">
+            <div class="col-lg-4 text-center">
+                <img src="{% static 'images/portfolio-pics-03.jpg' %}" width="250" height="360" class="rounded-3 shadow">
+            </div>
+            <div class="col-lg-4 text-center">
+                <img src="{% static 'images/portfolio-pics-01.jpg' %}" width="250" height="360" class="rounded-3 shadow">
+            </div>
+            <div class="col-lg-4 text-center">
+                <img src="{% static 'images/portfolio-pics-02.jpg' %}" width="250" height="360" class="rounded-3 shadow">
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+                <p class="h1 text-center text-primary">Sed diam voluptua!</p>
+                <p class="h5 text-center">At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                <p class="mt-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+
+                <!--
+                <div class="d-grid gap-2 col-6 mx-auto mt-5">
+                    <a href="{% url 'todolist' %}" role="button" class="btn btn-primary btn-lg">Task Mate Todo List</a>
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+{% endblock content %}
